@@ -1,1 +1,1 @@
-web: cd bowser && gunicorn bowserHTTPAPI:app
+web: gunicorn RGRB:app
