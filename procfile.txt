@@ -1,1 +1,1 @@
-web: gunicorn smite-rgrb:app
+web: gunicorn app.py:app
