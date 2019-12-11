@@ -1,1 +1,1 @@
-web: gunicorn RGRB.py:app
+web: gunicorn RGRB:app
