@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<title>Random God Random Build</title>
+
+
+
+<style>
+
+
+#GodImage{
+ width: 413px;
+ height= 550px;
+}
+
+#Choosing{
+
+  background-color: black;
+  overflow: hidden;
+  text-align: left;
+  text-decoration: none;
+  font-size: 22px;
+  width: 650px;
+  height:550px;
+ opacity:0.8;
+  color: white;
+font-family: "Courier New"
+  }
+#Choosing p{
+margin-left: 12px;
+
+}
+
+#Result{
+background-color: black;
+  overflow: hidden;
+  height: 200px;
+  width: 1098px;
+  text-align: Left;
+  text-decoration: none;
+  font-size: 28px;
+  color: white;
+ opacity:0.8;
+  text-align: center;
+ font-family: "Courier New";
+
+  }
+
+
+
+#content{
+
+display: grid;
+grid-template-columns: 650px 413px;
+grid-template-rows: 550px;
+  grid-column-gap:35px;
+  grid-row-gap:20px;
+margin-left:22%;
+margin-top:5%;
+
+
+}
+body, html {
+  height: 100%;
+}
+
+html{
+  /* The image used */
+ background-image: url(../static/5c16rU8-1280x640.jpg);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+
+}
+
+
+
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+   margin-top: 12px;
+  margin-bottom: 12px;
+   margin-left: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: white;
+font-family: "Courier New"
+
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #800000;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#Randomize {
+  background-color: #800000;
+  border: none;
+  color: white;
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+margin-left:250px;
+}
+#Randomize:hover {
+  background-color: #D80606;
+  color: white;
+}
+
+h2{
+margin-top: 20px;
+ color: white;
+  font-size: 25px;
+  color: Red;
+font-weight: bold;
+font-family: "Courier New";
+
+
+}
+
+</style>
+
+
+<body>
+
+
+<div id="content">
+
+  <div class="grid-item" id="Choosing">
+<p>Choose specific classes</p>
+
+
+<form method="POST" action="/">
+   <label class="container" id="Guardian" style=""> Guardian
+  <input type="checkbox" value="Guardian" name="class" >
+  <span class="checkmark"></span>
+</label>
+
+       <label class="container" id="Assassin"> Assassin
+  <input type="checkbox" value="Assassin" name="class">
+  <span class="checkmark"></span>
+</label>
+
+
+       <label class="container" id="Warrior"> Warrior
+  <input type="checkbox" value="Warrior" name="class" >
+  <span class="checkmark"></span>
+</label>
+
+
+         <label class="container" id="Mage"> Mage
+  <input type="checkbox" value="Mage" name="class" >
+  <span class="checkmark"></span>
+</label>
+
+
+   <label class="container" id="Hunter"> Hunter
+  <input type="checkbox" value="Hunter" name="class" >
+  <span class="checkmark"></span>
+</label>
+   <p>Choose your roles</p>
+
+
+   <label class="container" id="Support"> Support
+  <input type="checkbox" value="Support" name="role">
+  <span class="checkmark"></span>
+</label>
+
+       <label class="container" id="ADC"> ADC
+  <input type="checkbox" value="ADC" name="role">
+  <span class="checkmark"></span>
+</label>
+
+
+       <label class="container" id="SOLO"> Solo
+  <input type="checkbox" value="Solo"name="role">
+  <span class="checkmark"></span>
+</label>
+
+
+         <label class="container" id="Mid"> Mid
+  <input type="checkbox"value="Mid" name="role" >
+  <span class="checkmark"></span>
+</label>
+
+
+   <label class="container" id="Jungle"> Jungle
+  <input type="checkbox" value="Jungle"name="role" >
+  <span class="checkmark"></span>
+</label>
+   <button type="input" id="Randomize">Randomize </button>
+</form>
+
+
+</div>
+
+<div class="grid-item"id="GodImage">
+   <img src="{{url_for ('static', filename= godpicture) }} ">
+</div>
+
+<div class="grid-item" ID="Result">
+      <h2>{{ warning }}</h2>
+      <p>Your role is {{ roleplayed }}</p>
+  <p>You have to build {{ build }}</p>
+
+</div>
+</div>
+
+</body>
