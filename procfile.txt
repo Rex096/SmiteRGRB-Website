@@ -1,1 +1,2 @@
+$ vim Procfile
 web: gunicorn app.py:app
